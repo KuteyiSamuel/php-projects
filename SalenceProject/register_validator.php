@@ -9,6 +9,7 @@ $response = array();
 $firstname =isset($_POST["firstname"]) ? $_POST["firstname"] : null;
 $lastname = isset($_POST["lastname"]) ? $_POST["lastname"] : null;
 $email =isset($_POST["email"]) ? $_POST["email"] : null;
+$address =isset($_POST["address"]) ? $_POST["address"] : null;
 $career_field = isset($_POST["career_field"]) ? $_POST["career_field"] : null;
 $password = isset($_POST["password"]) ? $_POST["password"] : null;
 
@@ -50,6 +51,13 @@ if ($email == ""){
     }
 }
 
+if ($address == "") {
+    $response["address"] = "Please enter your home address";
+} else{
+    $address_tested = testInput($address);
+    $address_escaped = mysqli_real_escape_string($conn, $address);
+}
+
 if ($career_field == ""){
     $response["career_field"] = "Please select your field";
 }
@@ -65,14 +73,25 @@ if ($password == ""){
 
 if ($response == []){
     $password_hash = password_hash($password_tested, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (`firstname`, `lastname`, `work_mail`, `career_field`, `password`, `email_verified`) VALUES
-            ('$firstname_tested', '$lastname_tested', '$email_tested', '$career_field', '$password_hash', false)";
+    $sql = "INSERT INTO users (`firstname`, `lastname`, `work_mail`, `home_address`, `career_field`, `password`, `email_verified`, `activated`) VALUES
+            ('$firstname_tested', '$lastname_tested', '$email_tested', '$address_escaped', '$career_field', '$password_hash', false, false)";
     $conn->query($sql);
+
+    $query_id = "SELECT `id` FROM users WHERE work_mail = '$email_tested'";
+    $query_result = $conn->query($query_id);
+
+    if ($query_result->num_rows > 0) {
+        while($query_row = $query_result->fetch_assoc()) {
+            $user_id = $query_row["id"];
+            $_SESSION["user_id"] = $user_id;
+        }
+    }
+
+    $_SESSION["email"] = $email_tested;
 
     if ($_SESSION["verification_token"] == null) {
         $_SESSION["verification_token"] = generateRandomString(6);
         $_SESSION["time_created"] = date("Y-m-d h:i:s");
-        $_SESSION["email"] = $email_tested;
     }
     $response["success"] = "Successfully authenticated and registered";
 

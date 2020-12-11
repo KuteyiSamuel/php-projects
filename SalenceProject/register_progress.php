@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["verification_token"] = null;
+
 $response = [];
 
 $started =  1;

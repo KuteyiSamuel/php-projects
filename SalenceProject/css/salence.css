@@ -12,6 +12,21 @@
     width: 100%;
 }
 
+.content-holder{
+    width: 70%;
+    border: 1px solid #c3c3c3;
+    margin: 40px auto;
+}
+
+.delivery-header{
+    text-align: center;
+    padding: 25px 0;
+}
+
+.delivery{
+    padding: 12px 25px;
+}
+
 .colon {
     width: 100%;
     display: flex;
@@ -49,11 +64,25 @@
 .form-button{
     width: 100%;
     padding: 16px;
-    background-color: rgb(51, 124, 106);
     color: #fff;
     margin: 10px auto;
     border: 1px solid #c3c3c3;
 }
+
+.auth{
+    background-color: rgb(51, 124, 106);
+}
+
+.auth-alt{
+    background-color:rgb(25, 36, 45);
+}
+
+.updated{
+    text-align: center;
+    color: rgb(51, 124, 106);
+    font-weight: bold;
+}
+
 
 .flex-content{
     width: 50%;
@@ -73,7 +102,7 @@
 
 .block-content a{
     font-size: 18px;
-    color: indianred;
+    color: rgb(44, 61, 122);
     text-decoration: none;
     font-weight: bold;
 }
@@ -97,6 +126,7 @@
 
 .error-message, .warning{
     color: red;
+    font-weight: bold;
 }
 
 .success{
@@ -130,7 +160,7 @@
     transition: 0.3s ease-in;
 }
 
-.register-link a{
+.register-link a, .create{
     text-decoration: none;
     color: #000d1a;
     text-align: center;
@@ -138,7 +168,7 @@
 }
 
 .register-link a:hover{
-    color: indianred;
+    color: rgb(44, 61, 122);
 }
 
 .flexcheck{

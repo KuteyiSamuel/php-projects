@@ -23,7 +23,7 @@ $dbConfig = [
 // for your site.
 $paypalConfig = [
     'email' => 'immaculate88888@gmaill.com',
-    'return_url' => 'http://localhost/index.php',
+    'return_url' => 'http://localhost/payment_success.php',
     'cancel_url' => 'http://localhost/register.php',
     'notify_url' => 'http://localhost/payments.php'
 ];

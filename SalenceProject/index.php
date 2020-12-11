@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    if ($_SESSION["logged_in"] != true) {
+        header("Location: login.php");
+    }
+?>
 
 <html>
 <head>
@@ -152,6 +159,7 @@
     <div id="success" style="display: none">
         <i class="fas fa-check-circle"></i>
         <p>Your letter delivery order has been sent</p>
+        <a href="index.php" class="create">Create another letter</a>
     </div>
 </div>
 

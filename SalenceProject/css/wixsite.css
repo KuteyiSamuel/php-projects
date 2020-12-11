@@ -1,0 +1,572 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*:focus {
+    outline: 0;
+}
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar h2{
+    margin: 12px 0 0 82px;
+}
+
+
+.navbar ul {
+    list-style: none;
+    float: right;
+    margin-top: -40px;
+    padding: 0;
+}
+
+.floater {
+    width: 72%;
+}
+
+.login{
+    float: right;
+    width: 20%;
+    margin-top: 17px;
+}
+
+.navbar ul li {
+    float: left;
+    width: 95px;
+    line-height: 60px;
+    height: 55px;
+}
+
+.fa-user {
+    color: #fff;
+    padding: 8px 6px 0;
+    background-color: #687B8A;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.navbar ul span a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 17px;
+}
+
+.navbar ul li a {
+    font-size: 14px;
+}
+
+.navbar ul li ul li {
+    width: 200px;
+    display: none;
+    height: 45px;
+}
+
+.navbar ul li ul {
+    background-color: #ffffff;
+    margin-top: -12px;
+    text-align: center;
+    z-index: 5;
+}
+
+.navbar ul li ul li a {
+    padding: 0 2px;
+    width: 100%;
+}
+
+.navbar ul li ul li a:hover {
+    color: #99CFFE;
+    transition: 0.5s ease-in;
+}
+
+.navbar ul li:hover ul li {
+    display: block;
+}
+
+.navbar ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .break a {
+    color: #a0a0a0;
+}
+
+.toggler {
+    display: none;
+}
+
+.navbar ul li a:hover {
+    color: rgb(173, 52, 52);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background-color:  rgb(0, 39, 68);
+    animation: pad 0.5s;
+}
+
+.modal .modal-content{
+    width: 100%;
+}
+
+.close {
+    font-size: 35px;
+    color: #f2f2f2;
+    font-weight: bold;
+    float: right;
+    margin-right: 20px;
+}
+
+.close:hover{
+    cursor: pointer;
+}
+
+.fa-minus{
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.modal .modal-content .header{
+    width: 100%;
+    height: 220px;
+    background-color: rgb(1, 9, 15);
+    color: #ffffff;
+    text-align: center;
+}
+
+.modal .modal-content .header .content{
+    padding: 120px 0 20px;
+}
+
+.modal .modal-content .fa-user{
+    color: rgb(1, 9, 15);
+    background-color: #c3c3c3;
+    font-size: 50px;
+}
+
+.modal .modal-content .header div a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.modal .modal-content .inner-content{
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal .modal-content .inner-content .links{
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+}
+
+.modal .modal-content .inner-content .links .border{
+    height: 2px;
+    width: 35%;
+    background-color: #ffffff;
+    margin: 10px auto 0;
+}
+
+.modal .modal-content .inner-content .links a, .modal .modal-content .inner-content .links span{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.modal .modal-content .inner-content .links span{
+    padding-right: 25px;
+}
+
+.modal .modal-content .inner-content .links .addition{
+    margin-right: 35px;
+}
+
+.modal .modal-content .inner-content .links .inner-link{
+    display: none;
+}
+
+.modal .modal-content .inner-content .links .inner-link .link{
+    padding: 14px 0;
+}
+
+
+.banner{
+    width: 100%;
+    height: 44rem;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.19),  rgba(0, 0, 0, 0.20)), url("https://cdn.pixabay.com/photo/2016/02/19/11/19/office-1209640_960_720.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 15px;
+}
+
+.banner h1{
+    position: relative;
+    top: 20%;
+    left: 31.5%;
+    font-weight: bolder;
+    font-size: 55px;
+    color: #ffffff;
+    width: 38%;
+    text-align: center;
+}
+
+.super-charge{
+    width: 100%;
+    height: 42rem;
+    background-color: #CFDFF2;
+}
+
+.super-charge .title{
+    width: 45%;
+    padding-top: 20px;
+}
+
+.super-charge h2{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.super-charge .flex{
+    width: 70%;
+    display: flex;
+    position: relative;
+    top: 39%;
+}
+
+.super-charge .flex .content{
+    display: flex;
+    width: 31.5%;
+    margin-left: 10px;
+}
+
+.fa-check-circle{
+    font-size: 48px;
+    color: mediumseagreen;
+}
+
+.super-charge .flex .content .inner-content{
+    padding: 12px;
+    font-size: 26px;
+}
+
+.super-charge .flex .content .inner-content ul{
+    list-style: none;
+    padding-left: 20%;
+}
+
+.super-charge .flex .content .inner-content ul li::before{
+    content: "-";
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.super-charge .flex .content .inner-content ul li{
+    text-align: left;
+}
+
+.marketing h1{
+    padding: 45px 0 90px;
+    font-size: 40px;
+}
+
+.marketing .flex{
+    display: flex;
+    width: 85%;
+    padding: 80px 0;
+}
+
+.marketing .flex .image{
+    width: 40%;
+}
+
+.marketing .flex .image img{
+    margin: auto;
+    display: block;
+}
+
+.facebook-image{
+    width: 342px;
+    height: 327px;
+}
+
+.google-marketing{
+    margin-right: 125px;
+    display: block;
+    width: 85%;
+    padding: 60px 0;
+}
+
+.google-marketing .content{
+    float: left;
+    width: 60%;
+    padding: 50px 0;
+}
+
+.google-marketing .image{
+    float: right;
+    width: 40%;
+}
+
+.seo-marketing{
+    margin-left: 125px;
+}
+
+.google-image{
+    width: 434px;
+    height: 291px;
+}
+
+.seo-image{
+    width: 534px;
+    height: 361px;
+}
+
+.marketing .flex .content{
+    width: 60%;
+    padding: 30px 0;
+}
+
+.marketing .flex .content h2{
+    font-size: 35px;
+    padding: 30px 0;
+}
+
+.marketing .flex .content p,.google-marketing .content p{
+    width: 60%;
+    font-size: 24px;
+    padding-bottom: 50px;
+}
+
+
+
+.marketing .flex .content a, .media-management a, .google-marketing .content a{
+    padding: 12px 38px;
+    color: #ffffff;
+    background-color: #899BA8;
+    text-decoration: none;
+}
+
+
+.media-management{
+    padding: 40px 0;
+}
+
+.original  {
+    background-color: #CFDFF2;
+}
+
+
+
+.media-management h1{
+    padding: 20px 0;
+}
+
+.media-management p{
+    padding: 15px 0;
+    width: 45%;
+    font-size: 20px;
+}
+
+.media-management img{
+    margin: 20px 0;
+}
+
+.media-image{
+    width: 600px;
+    height: 280px;
+}
+
+.customized{
+    width: 50%;
+}
+
+.optimized{
+    width: 600px;
+    height: 389px;
+}
+
+.footer{
+    width: 100%;
+    height: 140px;
+    background-color: #10293C;
+}
+
+@media screen and (max-width: 800px){
+    .navbar h2{
+        margin-left: 15px;
+        padding-bottom: 20px;
+    }
+    .navbar ul {
+        display: none;
+        float: none;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar ul li:hover ul li {
+        display: none;
+    }
+
+    .navbar ul li ul{
+        width: 96%;
+    }
+
+    .navbar ul li ul li {
+        width: 100%;
+    }
+
+    .toggler {
+        display: block;
+        float: right;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: right;
+        width: 35%;
+        padding: 17px;
+        position: fixed;
+        top: 0;
+        right: 5px;
+    }
+
+    .fa-bars {
+        font-size: 22px;
+        color: rgb(9, 48, 109);
+        cursor: pointer;
+    }
+
+    .responsive ul {
+        display: block;
+    }
+
+    .banner{
+        height: 38rem;
+    }
+
+    .banner h1{
+        font-size: 32px;
+        width: 70%;
+        left: 15%;
+        top: 40%;
+    }
+
+    .super-charge{
+        height: 52rem;
+    }
+
+    .super-charge .title{
+        width: 75%;
+    }
+
+    .super-charge .title h1{
+         font-size: 24px;
+     }
+
+    .super-charge h2{
+        font-size: 21px;
+    }
+
+    .super-charge .flex{
+        display: block;
+        position: unset;
+        width: 100%;
+    }
+
+    .super-charge .flex .content{
+        display: block;
+        margin-top:70px;
+        width: 90%;
+    }
+
+    .super-charge .flex .content .inner-content{
+        font-size: 20px;
+    }
+
+    .super-charge .flex .content .inner-content ul{
+        margin-left: 125px;
+    }
+
+    .marketing h1{
+        font-size: 32px;
+        padding-bottom: 35px;
+    }
+
+    .google-marketing{
+        margin-right: 5px;
+        padding: 10px 0 30px;
+    }
+
+    .google-marketing .content, .google-marketing .image{
+        float: none;
+        width: 100%;
+    }
+
+    .marketing .flex, .google-marketing{
+        display: block;
+        width: 95%;
+    }
+
+    .marketing .flex{
+        padding: 25px 0;
+    }
+
+    .marketing .flex .image, .marketing .flex .content{
+        width: 100%;
+    }
+
+    .marketing .flex .content p, .google-marketing .content p,  .customized{
+        width: 90%;
+    }
+
+    .facebook-image, .google-image, .seo-image{
+        width: 85%;
+    }
+
+    .seo-marketing{
+        margin-left: 5px;
+    }
+
+    .media-management p{
+        width: 88%;
+    }
+
+    .media-image, .optimized{
+        width: 90%;
+    }
+
+}
+
+
+
+
+
+
+
