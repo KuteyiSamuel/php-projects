@@ -24,17 +24,20 @@ function sendMail($address, $type, $token = null, $link = null)  {
 
     if($type == "Mail verification"){
         $mail->Subject = "Email verification";
-        $message = "Hello. Please use this code for your email verification: " .$token;
+        $message = "<p style='font-size: 15px'>Hello. Please use this code for your email verification: 
+<span style='font-weight: bold; color: rgb(51, 124, 106);'>" .$token. "</span></p>";
     }
 
     if ($type == "Password reset"){
         $mail->Subject = "Password reset";
-        $message = "Hello. Please use this token for your password reset: " .$token;
+        $message = "<p style='font-size: 15px'>Hello. Please use this token for your password reset:  
+<span style='font-weight: bold; color: rgb(51, 124, 106);'>" .$token. "</span></p>";
     }
 
     if ($type == "Letter delivery"){
         $mail->Subject = "You have a new letter delivery order";
-        $message = "Hello, you have a new letter delivery order. See more details here: " .$link;
+        $message = "<p style='font-size: 15px'>Hello, you have a new letter delivery order. See more details  
+<a href='" .$link. "' style='font-weight: bold; color: rgb(51, 124, 106);  text-decoration: underline;'>here</a></p>";
     }
 
     $mail->Body = $message;

@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/ee654fe705.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php include "navbar.php"?>
 <div class="content-setter">
     <h2 style="color: #000d1a;text-align: center">Log in and get started</h2>
     <?php
@@ -24,7 +25,7 @@
     }
     ?>
     <div class="form-content">
-        <form action="index.php" method="post" id="login-form">
+        <form action="create.php" method="post" id="login-form">
             <div class="block-content">
                 <label>E-mail address</label>
                 <input class="form-input" type="email" autocomplete="off" id="email" name="email"  placeholder="Enter your email..">

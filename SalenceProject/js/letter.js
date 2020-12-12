@@ -32,9 +32,9 @@ var options = {
 var  quill = new Quill("#editor", options);
 
 $(document).ready(function () {
-   /* localStorage.removeItem("array")
+    localStorage.removeItem("array")
     localStorage.removeItem("index")
-    localStorage.removeItem("stage")*/
+    localStorage.removeItem("stage")
 
     if (localStorage.getItem("index") == null){
         localStorage.setItem("index", index.toString())
@@ -361,7 +361,9 @@ $(document).ready(function () {
             paper_type = localStorage.getItem("paper_type"), material = localStorage.getItem("material"),
             letter = localStorage.getItem("letter");
 
-            $.ajax({
+        $(".display-error").text("");
+
+        $.ajax({
                 url: "create_letter.php",
                 type: "POST",
                 data: {
@@ -375,6 +377,14 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     console.log(response)
+                    if (response.error) {
+                        $(".display-error").text("Error creating delivery order. Please try again");
+                    }
+
+                    if (response.failure) {
+                        $(".display-error").text("Error creating letter. Please try again");
+                    }
+
                         if (response.success){
                             $(".final-details").hide();
 

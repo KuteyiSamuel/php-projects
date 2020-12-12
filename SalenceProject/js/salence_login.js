@@ -37,7 +37,7 @@ $(document).ready(function () {
                 }
 
                 if (response.success)  {
-                    window.location.href = "index.php";
+                    window.location.href = "create.php";
                 }
             }
         })

@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once "connection.php";
+require_once "mail_sender.php";
+
 $response = [];
 $array = [];
 
@@ -24,7 +26,7 @@ $sql_letter =  "INSERT INTO letters (`user_id`, `recipient`, `orientation`, `mat
 ('$user_id', '$reciever_escaped', '$paper_type_escaped', '$material_escaped', '$letter_escaped', '$envelope_cover_escaped', '$envelope_message_escaped')";
 
 if ($conn->query($sql_letter) == true){
-    $response["success"] = "Created successfully";
+    $response["created"] = "Created successfully";
 }else{
     $response["failure"] = "Not created";
 }
@@ -53,6 +55,13 @@ if ($recipients != null){
 ('$id', '$firstname', '$lastname', '$email', '$company_name', '$profile_link', '$street_address', '$city', '$post_code', '$region')";
         $conn->query($sql);
     }
+}
+
+$link = "http://localhost/letter.php?id=" .$id;
+if(sendMail("itzsammy23@gmail.com", "Letter delivery", "",  $link) == "Mail sent"){
+    $response["success"] = "Order sent";
+} else{
+    $response["error"] =  "Error sending order";
 }
 
 

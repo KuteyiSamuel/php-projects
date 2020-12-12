@@ -12,6 +12,7 @@
 
 </head>
 <body>
+<?php include "navbar.php"?>
 
 <div class="content-setter">
     <h2 style="color: #000d1a;text-align: center">Enter the reset code</h2>

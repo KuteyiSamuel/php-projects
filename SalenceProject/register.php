@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/ee654fe705.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php include "navbar.php"?>
 <div class="register-progress" align="center">
     <i class="fas fa-user-check"></i>
     <div class="border-line"></div>
@@ -21,7 +22,7 @@
     <div class="content-setter" id="registration" style="display: none">
         <h2 style="color: #000d1a;text-align: center">Sign Up</h2>
         <div class="form-content">
-            <form action="index.php" method="post" id="request-form">
+            <form action="create.php" method="post" id="request-form">
                 <div class="colon">
                     <div class="flex-content">
                         <label>First Name</label>
@@ -77,9 +78,10 @@
     </div>
 
     <div class="content-setter" id="verification" style="display: none">
-        <h2 style="color: #000d1a;text-align: center">Mail Verification</h2>
+        <div style="width: 100%;  height: 20px; display: block; padding: 0; margin: 0;"><button class="go-back" id="back-to-form">Back</button></div>
+        <h2 style="color: #000d1a;text-align: center; padding-top: 65px;">Mail Verification</h2>
         <div class="form-content">
-            <form action="index.php" method="post" id="verify-form">
+            <form action="create.php" method="post" id="verify-form">
                 <div class="block-content">
                     <input class="form-input" type="text" autocomplete="off" id="token" name="token"  placeholder="Please enter the code sent to your mail">
                     <div id="token-message"></div>

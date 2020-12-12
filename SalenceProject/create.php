@@ -17,6 +17,7 @@
     <script src="https://kit.fontawesome.com/ee654fe705.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php include "navbar.php"?>
 <div id="loader"></div>
 
 <div id="container" align="center">
@@ -35,18 +36,18 @@
         <div class="form-content">
                 <div class="colon">
                     <div class="flex-content">
-                        <input class="form-input" type="text" autocomplete="off" name="firstname" id="firstname"  placeholder="Enter your first name..">
+                        <input class="form-input" type="text" autocomplete="off" name="firstname" id="firstname"  placeholder="Enter recipient's first name..">
                         <div class="error-message" id="first-name-error"></div>
                     </div>
 
                     <div class="flex-content">
-                        <input class="form-input" type="text" autocomplete="off" name="lastname"  id="lastname" placeholder="Enter your last name..">
+                        <input class="form-input" type="text" autocomplete="off" name="lastname"  id="lastname" placeholder="Enter recipient's last name..">
                         <div class="error-message" id="last-name-error"></div>
                     </div>
                 </div>
 
                 <div class="block-content">
-                    <input class="form-input" type="email" autocomplete="off" id="email" name="email"  placeholder="Enter your email address..">
+                    <input class="form-input" type="email" autocomplete="off" id="email" name="email"  placeholder="Enter recipient's email address..">
                     <div class="error-message" id="email-error"></div>
                 </div>
 
@@ -149,6 +150,8 @@
                 <textarea id="envelope-message" placeholder="Leave blank for no message"></textarea>
             </div>
 
+            <div class="error-message display-error"></div>
+
             <div class="half-content final-submission">
                 <button id="back-to-letter" class="back-button">Back</button>
                 <button id="final-submit" class="next-button">Send</button>
@@ -159,7 +162,7 @@
     <div id="success" style="display: none">
         <i class="fas fa-check-circle"></i>
         <p>Your letter delivery order has been sent</p>
-        <a href="index.php" class="create">Create another letter</a>
+        <a href="create.php" class="create">Create another letter</a>
     </div>
 </div>
 

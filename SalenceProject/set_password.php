@@ -11,6 +11,7 @@ session_start();
     <link href="css/salence.css" rel="stylesheet">
 </head>
 <body>
+<?php include "navbar.php"?>
 
 <div class="content-setter">
     <h2 style="color: #000d1a;text-align: center">Set a new password</h2>

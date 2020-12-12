@@ -91,6 +91,7 @@ $(document).ready(function () {
 
                     $('.fa-user-check').addClass("passed");
                     localStorage.setItem("progress", "verify");
+                    localStorage.setItem("mail", mail);
                     verifyMail();
                 }
             }
@@ -99,7 +100,8 @@ $(document).ready(function () {
 
     $("#resend-token").on("click", function (e) {
         e.preventDefault();
-        sendMail(mail);
+        var email = localStorage.getItem("mail");
+        sendMail(email);
     })
 
     $("#verify-button").on("click", function (e) {
@@ -146,6 +148,12 @@ $(document).ready(function () {
             }
         })
     })
+
+    $("#back-to-form").click(function () {
+            $("#verification").hide();
+            $("#registration").show();
+        localStorage.setItem("progress", "auth");
+    })
 })
 
 function showForm() {
@@ -170,7 +178,11 @@ function sendMail(address) {
        data: {
            mail: address
        },
+       complete: function () {
+         alert("Sent");
+       },
        success:  function (response) {
+           console.log(response)
            if (response.status == 200){
                $('#token-message').append(`<span class="success">Mail sent</span>`)
            }else{

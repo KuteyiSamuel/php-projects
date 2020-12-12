@@ -8,24 +8,106 @@
     outline: 0;
 }
 
-#container{
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1;
+}
+
+.navbar h2{
+    margin: 12px 0 0 82px;
+}
+
+
+.navbar ul {
+    list-style: none;
+    float: right;
+    margin-top: -40px;
+    padding: 0;
+}
+
+.floater {
+    width: 30%;
+}
+
+.login{
+    float: right;
+    width: 60%;
+    margin-top: 17px;
+}
+
+.navbar ul li {
+    float: left;
+    width: 95px;
+    line-height: 60px;
+    height: 55px;
+}
+
+
+.navbar ul li a {
+    font-size: 14px;
+}
+
+.navbar ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+.toggler {
+    display: none;
+}
+
+.navbar ul li a:hover {
+    color: rgb(51, 124, 106);
+    font-weight: bold;
+}
+
+#container{
+    width: 80%;
+    margin: 85px auto;
 }
 
 .content-holder{
     width: 70%;
     border: 1px solid #c3c3c3;
-    margin: 40px auto;
+    margin: 85px auto;
 }
 
 .delivery-header{
     text-align: center;
     padding: 25px 0;
+    color: rgb(51, 124, 106);
 }
 
 .delivery{
-    padding: 12px 25px;
+    padding: 25px;
 }
+
+.delivery .content-heading{
+    color: rgb(25, 36, 45);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.delivery div{
+    padding: 15px;
+}
+
+.delivery-recipients{
+    width: 95%;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.delivery-recipients:last-child{
+    border-bottom: none;
+}
+
 
 .colon {
     width: 100%;
@@ -37,7 +119,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 16px 32px rgba(0, 0, 0, 0.20);
     height: auto;
     width: 50%;
-    margin: 70px auto 30px auto;
+    margin: 85px auto 30px auto;
     padding: 25px;
     border: 1px solid #c3c3c3;
     border-radius: 8px;
@@ -54,11 +136,14 @@
 }
 
 .form-content input, .form-content select, .material-type select{
-    width: 100%;
     padding: 9px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #c3c3c3;
+}
+
+.form-content input, .form-content select{
+    width: 100%;
 }
 
 .form-button{
@@ -86,17 +171,12 @@
 
 .flex-content{
     width: 50%;
-    padding: 12px;
-}
-
-.block-content{
-    width: 98%;
-    padding: 12px;
+    padding: 12px 5px 12px 0;
 }
 
 .half-content{
     width: 75%;
-    padding: 12px;
+    padding: 12px 0;
     float: left;
 }
 
@@ -134,9 +214,9 @@
 }
 
 .register-progress{
-    width: 35%;
+    width: 30%;
     display: flex;
-    margin: 50px auto;
+    margin: 85px auto;
 }
 
 .fa-user-check, .fa-envelope-open, .fa-paypal{
@@ -260,7 +340,7 @@
 }
 
 .recipient-form .form-content .block-content{
-    width: 83%;
+    width: 83.5%;
     float: left;
 }
 
@@ -268,7 +348,7 @@
     color: #ffffff;
     width: 45%;
     margin: 22px;
-    padding: 12px;
+    padding: 12px 6px;
 }
 
 .new-recipient, #next-page{
@@ -285,7 +365,7 @@
 
 .content-container{
     width: 75%;
-    padding: 20px 0;
+    padding: 10px 0;
     float: left;
 }
 
@@ -340,13 +420,13 @@
 
 .paper-selector .a-4{
     float: left;
-    width: 35%;
+    width: 41%;
     height: 550px;
 }
 
 .paper-selector .a-5{
     float: right;
-    width: 55%;
+    width: 51%;
     height: 350px;
     margin-left: 5%;
 }
@@ -408,12 +488,23 @@
     border: 1px solid #c3c3c3;
     color: #ffffff;
     border-radius: 5px;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 .back-button{
     background-color: rgb(25, 36, 45);
     display: none;
+    float: left;
+}
+
+.go-back{
+    padding: 14px;
+    width: 15%;
+    border: 1px solid #c3c3c3;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 15px 0;
+    background-color: rgb(51, 124, 106);
     float: left;
 }
 
@@ -468,14 +559,69 @@
     color: rgb(51, 124, 106);;
 }
 
+#login-form .block-content, #request-form .block-content,  #verification .block-content{
+    padding: 12px 0;
+}
+
 
 @media screen and (max-width: 800px){
+    .navbar{
+        padding: 12px;
+    }
+    .navbar ul {
+        display: none;
+        float: none;
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .navbar h2{
+        margin: 0;
+    }
+
+    .navbar ul li {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .toggler {
+        display: block;
+        float: right;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: right;
+        width: 35%;
+        padding: 24px;
+        position: fixed;
+        top: 0;
+        right: 5px;
+    }
+
+    .fa-bars {
+        font-size: 22px;
+        color: rgb(9, 48, 109);
+        cursor: pointer;
+    }
+
+    .register-progress{
+        width: 60%;
+    }
+
+    .fa-user-check, .fa-envelope-open, .fa-paypal{
+        font-size: 25px;
+    }
+
+    .content-holder, #container{
+        width: 95%;
+    }
     .content-setter{
         width: 83%;
     }
 
     .flex-content{
-        width: 97%;
+        width: 99%;
     }
 
     .form-content{
@@ -484,14 +630,81 @@
 
     .recipient-holder{
         display: block;
-        width: 95%;
+        margin-left: 0;
+        width: 90%;
     }
 
     .recipient-holder .recipient{
         width: 90%;
+        margin: 10px 0;
+    }
+
+    .recipient-form{
+        width: 92%;
+        margin: 10px auto;
     }
 
     .paper-selector{
+        width: 95%;
+        height: 350px;
+    }
+
+    .paper-selector .a-4{
+        width: 41%;
+        height: 300px;
+    }
+
+    .paper-selector .a-4 p{
+        line-height: 300px;
+    }
+
+    .paper-selector .a-5{
+        width: 51%;
+        height: 220px;
+    }
+
+    .paper-selector .a-5 p{
+        line-height: 220px;
+    }
+
+    .paper-selector .a-4 p, .paper-selector .a-5 p{
+        font-size: 14px;
+    }
+
+    .material-type select{
+        width: 80%;
+    }
+
+    .flex-display{
+        margin: 15px 5px;
+        display: block;
+    }
+
+    .ql-toolbar, .editor{
+        width: 95%;
+    }
+
+    .ql-toolbar{
+        height: 32%;
+    }
+
+    .ql-container{
+        margin: 0;
+    }
+
+    .display-error{
+        margin-top: 15px;
+    }
+
+    .editor{
+        height: 60%;
+    }
+
+    .tool-header{
+        padding-bottom: 5px;
+    }
+
+    .final-details .half-content{
         width: 95%;
     }
 }

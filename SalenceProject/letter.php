@@ -41,16 +41,17 @@ if ($result_query->num_rows > 0) {
     <script src="https://kit.fontawesome.com/ee654fe705.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php include "navbar.php"?>
         <div class="content-holder">
             <h2 class="delivery-header">New letter delivery order from <?php echo $firstname ." ". $lastname; ?></h2>
 
-            <div class="delivery delivery-sender"><h4>Sender</h4>: <?php echo $firstname ." ". $lastname ?></div>
+            <div class="delivery delivery-sender"><span class="content-heading">Sender</span>: <?php echo $firstname ." ". $lastname ?></div>
             <div class="delivery delivery-recipient">
                 <h3>Recipients</h3>
                 <?php
                     if ($recipient == "self") {
                 ?>
-                    <p><h4>Recipient:</h4> self</p>
+                    <p><span class="content-heading">Recipient:</span> self</p>
                 <?php
                     }  else{
                         $recipient_query = "SELECT * FROM recipients WHERE letter_id = '$id'";
@@ -69,15 +70,15 @@ if ($result_query->num_rows > 0) {
                                 $recipient_region = $recipient_row["region"];
                 ?>
                   <div class="delivery delivery-recipients">
-                      <div><h4>>Recipient name:</h4> <?php echo $recipient_firstname ." ". $recipient_lastname ?></div>
-                      <div><h4>Recipient mail:</h4> <?php echo $recipient_mail ?></div>
-                      <div><h4>Recipient company name:</h4> <?php echo $recipient_company ?></div>
-                      <div><h4>Recipient LinkedIn Profile URL:</h4> <?php echo $recipient_profile ?></div>
+                      <div><span class="content-heading">Recipient name:</span> <?php echo $recipient_firstname ." ". $recipient_lastname ?></div>
+                      <div><span class="content-heading">Recipient mail:</span> <?php echo $recipient_mail ?></div>
+                      <div><span class="content-heading">Recipient company name:</span> <?php echo $recipient_company ?></div>
+                      <div><span class="content-heading">Recipient LinkedIn Profile URL:</span> <?php echo $recipient_profile ?></div>
                       <h3>Head office details</h3>
-                      <div><h4>Company address:</h4> <?php echo $recipient_address ?></div>
-                      <div><h4>City:</h4> <?php echo $recipient_city ?></div>
-                      <div><h4>Post code:</h4> <?php echo $recipient_post_code ?></div>
-                      <div><h4>Region:</h4> <?php echo $recipient_region ?></div>
+                      <div><span class="content-heading">Company address:</span> <?php echo $recipient_address ?></div>
+                      <div><span class="content-heading">City:</span> <?php echo $recipient_city ?></div>
+                      <div><span class="content-heading">Post code:</span> <?php echo $recipient_post_code ?></div>
+                      <div><span class="content-heading">Region:</span> <?php echo $recipient_region ?></div>
                   </div>
                 <?php
                             }
@@ -85,15 +86,15 @@ if ($result_query->num_rows > 0) {
                     }
                 ?>
             </div>
-            <div class="delivery delivery-orientation"><h4>Sender:</h4> <?php echo $orientation ?></div>
+            <div class="delivery delivery-orientation"><span class="content-heading">Paper orientation:</span> <?php echo $orientation ?></div>
             <div class="delivery delivery-letter">
                 <h3>Letter</h3>
                 <div class="letter-body">
                     <?php echo $letter_body ?>
                 </div>
             </div>
-            <div class="delivery delivery-envelope"><h4>Envelope color: </h4> <?php echo $envelope_color ?></div>
-            <div class="delivery delivery-envelope-message"><h4>Envelope message:</h4>+?php echo $envelope_message ?></div>
+            <div class="delivery delivery-envelope"><span class="content-heading">Envelope color: </span> <?php echo $envelope_color ?></div>
+            <div class="delivery delivery-envelope-message"><span class="content-heading">Envelope message:</span><?php echo $envelope_message ?></div>
         </div>
 </body>
 </html>
